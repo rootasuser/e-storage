@@ -53,7 +53,6 @@ $profileImage = empty($user['profile_pic'])
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-  
 <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
@@ -100,46 +99,33 @@ $profileImage = empty($user['profile_pic'])
     </div>
   </div>
 </nav>
-
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
-         <!-- Dashboard -->
          <li>
             <a href="?page=analytics" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fas fa-tachometer-alt w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
                <span class="ms-3"><?php echo $dashboard_name; ?></span>
             </a>
          </li>
-
-         <!-- Research Titles -->
          <li>
             <a href="?page=research_title" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fas fa-book-open w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
                <span class="flex-1 ms-3 whitespace-nowrap"><?php echo $courses_name; ?></span>
             </a>
          </li>
-
-      
-         <!-- Documents -->
          <li>
             <a href="?page=documents" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fas fa-file-alt w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
                <span class="flex-1 ms-3 whitespace-nowrap"><?php echo $requests_name; ?></span>
             </a>
          </li>
-
-     
-   
-         <!-- Activity Logs -->
          <li>
             <a href="?page=logs" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fas fa-history w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
                <span class="flex-1 ms-3 whitespace-nowrap"><?php echo $activity_name; ?></span>
             </a>
          </li>
-
-         <!-- User Management -->
          <li>
             <a href="?page=users" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fas fa-users w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
@@ -149,7 +135,6 @@ $profileImage = empty($user['profile_pic'])
       </ul>
    </div>
 </aside>
-
 <main class="mt-20 p-4 sm:ml-64">
         <div class="container mx-auto">
         <?php
@@ -159,8 +144,6 @@ $profileImage = empty($user['profile_pic'])
             $viewFile = __DIR__ . '/templates/' . $page . '.php';
             if (is_readable($viewFile)) { include $viewFile; } else { http_response_code(404); echo '<h2>404 - Page Not Found</h2>'; }
         ?>
-
-
         </div>
     </main>
 
