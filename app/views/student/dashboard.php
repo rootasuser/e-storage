@@ -18,6 +18,10 @@ function getInitials($first, $last) {
 }
 
 function generateAvatar($initials) {
+    if (!function_exists('imagecreatetruecolor')) {
+        return 'https://via.placeholder.com/30?text=' . urlencode($initials);
+    }
+
     $w = $h = 30;
     $im = imagecreatetruecolor($w, $h);
     $colors = [
@@ -37,6 +41,7 @@ function generateAvatar($initials) {
     imagedestroy($im);
     return 'data:image/png;base64,' . base64_encode($data);
 }
+
 
 $profileImage = empty($user['profile_pic'])
     ? generateAvatar(getInitials($user['first_name'], $user['last_name']))
