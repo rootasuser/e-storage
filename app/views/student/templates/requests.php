@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (decodedPath.includes('abstracts')) {
                     fullUrl = window.location.origin + '/e-storage/app/views/admin/uploads/abstracts/' + decodedPath.split('/').pop();
                 } else if (decodedPath.includes('manuscript')) {
-                    fullUrl = window.location.origin + '/e-storageapp/views/admin//uploads/manuscript/' + decodedPath.split('/').pop();
+                    fullUrl = window.location.origin + '/e-storageapp/views/admin//uploads/manuscripts/' + decodedPath.split('/').pop();
                 } else {
                     fullUrl = window.location.origin + '/' + decodedPath;
                 }
